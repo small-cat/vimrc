@@ -410,9 +410,36 @@ Just do following:
 * Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
 
 
-## Looking for a remote-first job?
+## Use Vim with Coc.nvim
+> https://github.com/neoclide/coc.nvim
 
-Maintaining this Vim configuration isn't my day job. Daily I am the founder/CEO of [Doist](https://doist.com/). You could come and help us build the workplace of the future while living a balanced life (anywhere in the world 🌍🌎🌏).
+coc.nvim requires node, so should install latest node first by nvm.
 
-PS: Using Vim isn't a requirement 😄
+> https://github.com/nvm-sh/nvm
 
+add the following to your .vimrc
+```
+call plug#begin()
+" Use release branch (recommended)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Or build from source code by using npm
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
+call plug#end()
+```
+restart vim, and then type command
+```
+:PlugInstall
+```
+to install coc.nvim
+
+then, install coc extension
+```
+:CocInstall coc-clangd
+:CocInstall coc-json
+:CocInstall coc-pyright
+```
+coc-clangd still required clangd on your system, in ubuntu
+```
+sudo apt-get install clangd
+```
