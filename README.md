@@ -442,4 +442,5 @@ then, install coc extension
 coc-clangd still required clangd on your system, in ubuntu
 ```
 sudo apt-get install clangd
+pip install python-lsp-server[all]
 ```
